@@ -1,0 +1,167 @@
+http:
+  port: 8080
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  api:
+    host: localhost
+    paths: '/ip'
+  tareas:
+    host: localhost
+    paths: ['/tarea/*']
+  clientes:
+    host: localhost
+    paths: ['/cliente/*']
+  consejos:
+    host: localhost
+    paths: ['/consejo/*']
+  psicologos:
+    host: localhost
+    paths: ['/psicologo/*']
+  respuestas:
+    host: localhost
+    paths: ['/respuesta/*']
+  comentarios:
+    host: localhost
+    paths: ['/comentario/*']
+  citas:
+    host: localhost
+    paths: ['/cita/*']
+  sconsultas:
+    host: localhost
+    paths: ['/consulta/*']
+  suscripciones:
+    host: localhost
+    paths: ['/suscripcion/*']
+serviceEndpoints:
+  httpbin:
+    url: 'https://httpbin.org'
+  tareasService:
+    url: 'http://23.22.105.14'
+  clientesService:
+    url: 'http://54.147.89.61'
+  consejosService:
+    url: 'http://44.217.125.134'
+  psicologosService:
+    url: 'http://54.83.165.193'
+  respuestasService:
+    url: 'http://54.210.107.16'
+  comentariosService:
+    url: 'http://44.217.4.1'
+  citasService:
+    url: 'http://54.146.114.123'
+  sconsultasService:
+    url: 'http://44.217.14.233'
+  suscripcionesService:
+    url: 'http://50.16.147.44'
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+pipelines:
+  default:
+    apiEndpoints:
+      - api
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin 
+              changeOrigin: true
+  tareasPipeline:
+    apiEndpoints:
+      - tareas
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: tareasService 
+              changeOrigin: true
+  clientesPipeline:
+    apiEndpoints:
+      - clientes
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: clientesService 
+              changeOrigin: true
+  consejosPipeline:
+    apiEndpoints:
+      - consejos
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: consejosService 
+              changeOrigin: true
+  psicologosPipeline:
+    apiEndpoints:
+      - psicologos
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: psicologosService 
+              changeOrigin: true
+  respuestasPipeline:
+    apiEndpoints:
+      - respuestas
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: respuestasService 
+              changeOrigin: true
+  comentariosPipeline:
+    apiEndpoints:
+      - comentarios
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: comentariosService 
+              changeOrigin: true
+  citasPipeline:
+    apiEndpoints:
+      - citas
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: citasService 
+              changeOrigin: true
+  sconsultasPipeline:
+    apiEndpoints:
+      - sconsultas
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: sconsultasService 
+              changeOrigin: true
+  suscripcionesPipeline:
+    apiEndpoints:
+      - suscripciones
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: suscripcionesService 
+              changeOrigin: true
