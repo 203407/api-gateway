@@ -40,7 +40,7 @@ serviceEndpoints:
   tareasService:
     url: 'http://23.22.105.14'
   clientesService:
-    url: 'http://54.147.89.61'
+    url: 'http://3.238.94.114'
   consejosService:
     url: 'http://44.217.125.134'
   psicologosService:
