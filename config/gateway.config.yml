@@ -46,7 +46,7 @@ serviceEndpoints:
   psicologosService:
     url: 'http://54.83.165.193'
   respuestasService:
-    url: 'http://54.210.107.16'
+    url: 'http://54.209.71.163'
   comentariosService:
     url: 'http://44.217.4.1'
   citasService:
