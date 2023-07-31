@@ -12,13 +12,13 @@ apiEndpoints:
     paths: ['/tarea/*']
   clientes:
     host: localhost
-    paths: ['/cliente/*']
+    paths: ['/cliente/*','/uploads/*']
   consejos:
     host: localhost
     paths: ['/consejo/*']
   psicologos:
     host: localhost
-    paths: ['/psicologo/*']
+    paths: ['/psicologo/*','/uploads/*']
   respuestas:
     host: localhost
     paths: ['/respuesta/*']
